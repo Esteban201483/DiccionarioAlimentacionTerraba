@@ -125,12 +125,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayMenuList(View v)
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Indice");
 
 
         String[] categorias = {"Portada", "DŔÍ", "DŔÍ SHAŔIEI SÓŔË ÓBRË ÓBRË", "Québin̈ éga ibín̈",
-                "é̈b", "C'uofrurún", "Íc", "Zhóc", "Có", "Shúb", "Créditos"
+                "é̈b", "C'uofrurún", "Íc", "Zhóc", "Có", "Shúb", "Créditos", "Desarrollado por"
         };
 
         int c = R.drawable.ic_launcher_background;
@@ -150,6 +150,18 @@ public class MainActivity extends AppCompatActivity {
                     case 8:  irOpcion(93);    break;//¿?
                     case 9:  irOpcion(100);    break;//Pejibaye
                     case 10: irOpcion(104);    break;//Créditos
+                    case 11:
+                        AlertDialog.Builder developers = new AlertDialog.Builder(builder.getContext());
+                        developers.setMessage("Desarrolladores: \n \n" +
+                                ("Esteban Rojas Solís \n \n" +
+                                        "Daniel Escamilla Leon Paez"))
+                                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                    }
+                                });
+                        developers.create().show();
+                        break;
 
                 }
             }
